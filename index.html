@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reelforge | High-Performing Reels & Cinematic Events</title>
+    <meta name="description"
+        content="Forging Moments into Cinematic Masterpieces. Professional event capturing, cinematic shoots, and high-end video editing.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reelforge.vercel.app/">
+    <meta property="og:title" content="Reelforge | Cinematic Video Production">
+    <meta property="og:description"
+        content="Professional event capturing, cinematic shoots, and high-end video editing tailored for lasting impact.">
+    <meta property="og:image" content="/media/images/reelforge_logo_no_bg.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://reelforge.vercel.app/">
+    <meta property="twitter:title" content="Reelforge | Cinematic Video Production">
+    <meta property="twitter:description"
+        content="Professional event capturing, cinematic shoots, and high-end video editing tailored for lasting impact.">
+    <meta property="twitter:image" content="/media/images/reelforge_logo_no_bg.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Outfit:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="media/images/reelforge_logo_no_bg.png">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#hero" class="logo">
+                <img src="media/images/reelforge_logo_no_bg.png" alt="Reelforge Logo" class="logo-img">
+            </a>
+
+            <button class="mobile-toggle" id="mobile-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#services">Services</a>
+                <a href="#contact" class="btn-contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cinematic-scanlines"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-animations">
+                <div class="bg-orb orb-1"></div>
+                <div class="bg-orb orb-2"></div>
+                <div class="bg-orb orb-3"></div>
+            </div>
+            <div class="container hero-container-flex">
+                <div class="hero-text-side" data-aos="fade-right">
+                    <h1 class="hero-title">
+                        Reel<span class="text-accent-gradient">forge</span>
+                    </h1>
+                    <p class="hero-tagline">
+                        Capturing life's energy through cinematic events and professional shoots.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#portfolio" class="btn-primary">View Portfolio</a>
+                        <a href="#contact" class="btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+
+                <div class="hero-video-side" data-aos="fade-left">
+                    <div class="phone-mockup">
+                        <video autoplay loop muted playsinline class="mockup-video">
+                            <source src="media/videos/babyshoot.MOV" type="video/quicktime">
+                            <source src="media/videos/babyshoot.MOV" type="video/mp4">
+                        </video>
+                        <div class="mockup-glare"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-container" data-aos="fade-right">
+                        <div class="about-image">
+                            <i data-lucide="film" size="180"></i>
+                            <div class="image-overlay-glow"></div>
+                        </div>
+                        <div class="stats-box">
+                            <h3>100%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+
+                    <div class="about-content" data-aos="fade-left" data-aos-delay="200">
+                        <h2 class="section-title">
+                            Crafting <span class="text-accent-gradient">Addictive</span> Visual Experiences
+                        </h2>
+                        <div class="about-text-content">
+                            <p class="lead-text">
+                                I specialize in capturing the soul of events and the essence of professional shoots,
+                                turning raw moments into cinematic memories.
+                            </p>
+
+                            <div class="about-highlights">
+                                <div class="highlight">
+                                    <span class="bullet">✦</span>
+                                    <p><strong>40+ Events & Shoots:</strong> Weddings, high-energy concerts, birthdays,
+                                        and professional cinematic sessions.</p>
+                                </div>
+                                <div class="highlight">
+                                    <span class="bullet">✦</span>
+                                    <p><strong>Cinematic Vision:</strong> Focused on lighting, composition, and timing
+                                        to capture the perfect frame every time.</p>
+                                </div>
+                                <div class="highlight">
+                                    <span class="bullet">✦</span>
+                                    <p><strong>Lasting Impact:</strong> Videos designed to preserve emotions and share
+                                        your story with the world.</p>
+                                </div>
+                            </div>
+
+                            <p class="highlight-text"
+                                style="margin-top: 2rem; color: var(--text-primary); font-weight: 500; font-size: 1.2rem;">
+                                If you want your next event or shoot to look legendary, let's capture it together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <div class="portfolio-header">
+                    <h2 class="section-title">Our <span class="text-accent-gradient">Work</span></h2>
+
+                    <div class="category-filters" id="category-filters">
+                        <!-- Filters will be generated by JS -->
+                    </div>
+                </div>
+
+                <div class="portfolio-grid" id="portfolio-grid">
+                    <!-- Portfolio items will be generated by JS -->
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;" data-aos="fade-up">
+                    <a href="https://drive.google.com/drive/folders/1gtRtDuczhzi6cXeVqevxh81q2HtPYoOa" target="_blank"
+                        rel="noopener noreferrer" class="btn-secondary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        View Full Portfolio on Google Drive
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="services-header">
+                    <h2 class="section-title">Our <span class="text-accent-gradient">Services</span></h2>
+                    <p class="services-subtitle">Capturing the moments that matter most.</p>
+                </div>
+
+                <div class="services-grid" id="services-grid">
+                    <!-- Services will be generated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h2 class="section-title">Ready to <span class="text-accent-gradient">Create?</span></h2>
+                        <p class="contact-description">
+                            Let's talk about your next big event or professional shoot. We'll craft a custom production
+                            strategy to capture the magic.
+                        </p>
+
+                        <div class="contact-methods">
+                            <a href="tel:9076220461" class="contact-method-card">
+                                <i data-lucide="phone" class="method-icon"></i>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p>9076220461</p>
+                                </div>
+                            </a>
+
+                            <a href="mailto:reelforge19@gmail.com" class="contact-method-card">
+                                <i data-lucide="mail" class="method-icon"></i>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <p>reelforge19@gmail.com</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container" data-aos="fade-left">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectType">Project Type</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="projectType" name="projectType">
+                                        <option value="Wedding Highlights">Wedding Highlights</option>
+                                        <option value="Concert Coverage">Concert Coverage</option>
+                                        <option value="Professional Shoot">Professional Shoot (Portrait/Fashion)
+                                        </option>
+                                        <option value="Brand Storytelling">Brand Storytelling</option>
+                                        <option value="Product Shoot">Product Shoot</option>
+                                        <option value="Birthday/Party">Birthday or Private Party</option>
+                                        <option value="Corporate Event">Corporate Event</option>
+                                        <option value="Event Editing">Cinematic Editing (Footage Provided)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Project Details</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    placeholder="Tell us about what you want to achieve..."></textarea>
+                            </div>
+
+                            <div id="status-message" class="status-message"></div>
+
+                            <button type="submit" class="btn-primary form-submit-btn" id="submit-btn">
+                                <span>Send Message</span> <i data-lucide="send" size="18"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#hero" class="logo">
+                        <img src="media/images/reelforge_logo_no_bg.png" alt="Reelforge Logo" class="logo-img">
+                    </a>
+                    <p>Forging Moments into Cinematic Masterpieces.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-links-col">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#portfolio">Work</a></li>
+                            <li><a href="#services">Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-socials">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram" size="20"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter" size="20"></i></a>
+                        <a href="#" aria-label="Youtube"><i data-lucide="youtube" size="20"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" size="20"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Reelforge Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal-overlay" id="video-modal">
+        <div class="video-modal-content">
+            <button class="close-modal" id="close-modal">
+                <i data-lucide="x"></i>
+            </button>
+
+            <div class="video-wrapper">
+                <video id="modal-video" poster="" controls playsinline webkit-playsinline class="modal-video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
