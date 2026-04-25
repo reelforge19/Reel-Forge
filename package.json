@@ -1,0 +1,13 @@
+{
+  "name": "reel-forge-web",
+  "version": "1.0.0",
+  "description": "Reel Forge - Video Portfolio Platform",
+  "private": true,
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
