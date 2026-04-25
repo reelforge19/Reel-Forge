@@ -184,23 +184,68 @@ navMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
-// Portfolio Rendering & Filtering
-function renderPortfolio(filter = 'All') {
-    portfolioGrid.innerHTML = '';
+// Lazy Loading Setup
+let currentPage = 1;
+let currentFilter = 'All';
+let isLoading = false;
+let hasMoreReels = true;
+
+// Intersection Observer for lazy loading videos
+const observerOptions = {
+    root: null,
+    rootMargin: '100px',
+    threshold: 0.1
+};
+
+const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const video = entry.target;
+            if (!video.src) {
+                video.src = video.dataset.src;
+                video.load();
+                videoObserver.unobserve(video);
+            }
+        }
+    });
+}, observerOptions);
+
+// Portfolio Rendering with Pagination & Lazy Loading
+function renderPortfolio(filter = 'All', page = 1, append = false) {
+    if (isLoading) return;
+    isLoading = true;
+
+    if (!append) {
+        portfolioGrid.innerHTML = '';
+        currentPage = 1;
+        currentFilter = filter;
+        hasMoreReels = true;
+    }
+
     const filteredItems = filter === 'All' 
         ? dummyReels.filter(item => item.id !== 3) 
         : dummyReels.filter(item => item.category === filter);
 
-    filteredItems.forEach((item, index) => {
+    // Pagination - load 6 items at a time
+    const pageSize = 6;
+    const startIdx = (page - 1) * pageSize;
+    const endIdx = startIdx + pageSize;
+    const itemsToRender = filteredItems.slice(startIdx, endIdx);
+
+    if (itemsToRender.length < pageSize) {
+        hasMoreReels = false;
+    }
+
+    itemsToRender.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'reel-card';
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', (index % 3) * 100);
 
         card.innerHTML = `
-            <video class="reel-video-preview" muted loop playsinline autoplay>
-                <source src="${item.video}" type="video/mp4">
-                <source src="${item.video}" type="video/quicktime">
+            <video class="reel-video-preview" muted loop playsinline data-src="${item.video}">
+                <source type="video/mp4">
+                <source type="video/quicktime">
             </video>
             <div class="reel-overlay">
                 <div class="play-btn">
@@ -213,13 +258,33 @@ function renderPortfolio(filter = 'All') {
             </div>
         `;
 
+        const video = card.querySelector('video');
+        videoObserver.observe(video);
+
         card.addEventListener('click', () => openVideoModal(item));
         portfolioGrid.appendChild(card);
     });
 
     // Create icons for new elements
     lucide.createIcons();
+    
+    // Update AOS for new elements
+    AOS.refresh();
+    
+    isLoading = false;
+    currentPage++;
 }
+
+// Infinite Scroll Implementation
+window.addEventListener('scroll', () => {
+    if (!isLoading && hasMoreReels) {
+        const scrollPercentage = (window.innerHeight + window.scrollY) / document.documentElement.scrollHeight;
+        
+        if (scrollPercentage > 0.8) { // Load more when 80% scrolled down
+            renderPortfolio(currentFilter, currentPage, true);
+        }
+    }
+});
 
 function renderFilters() {
     categoryFilters.innerHTML = '';
@@ -230,7 +295,7 @@ function renderFilters() {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            renderPortfolio(cat);
+            renderPortfolio(cat, 1, false); // Reset pagination when filter changes
         });
         categoryFilters.appendChild(btn);
     });
